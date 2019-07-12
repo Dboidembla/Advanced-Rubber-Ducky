@@ -1,0 +1,21 @@
+
+DELAY 2000
+
+GUI r
+
+DELAY 800
+
+STRING iexplore -k http://fakeupdate.net/win10u/index.html
+
+ENTER
+
+DELAY 800
+
+GUI r 
+
+DELAY 800
+
+STRING powershell "Remove-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU' -Name '*' -ErrorAction SilentlyContinue"
+
+ENTER
+
